@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author gherve
+ *
+ */
+module projetCalcul {
+}
