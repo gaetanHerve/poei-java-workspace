@@ -54,6 +54,8 @@ public class Test {
 		Personne p3 = new Personne("testNom", "testPrenom", 45);
 		
 		System.out.println(p.getInfo());
+		System.out.println(p2.getInfo());
+		System.out.println(p3.getInfo());
 	}
 
 }

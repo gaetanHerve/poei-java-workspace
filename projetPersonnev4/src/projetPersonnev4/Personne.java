@@ -4,6 +4,11 @@ public class Personne {
 	private String nom;
 	private String prenom;
 	private int age;
+	private static final int ageMin = 0;
+	private static final int ageMax = 120;
+	private static final int ageMajeur = 18;
+	
+	private boolean isMajeur;
 	
 	
 	public Personne() {}
@@ -11,7 +16,7 @@ public class Personne {
 	public Personne(String nom, String prenom, int age) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.age = age;
+		this.setAge(age);
 	}
 
 	public int getAge() {
@@ -19,7 +24,10 @@ public class Personne {
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		if (age > ageMin && age <= ageMax && age > this.age) {
+			this.age = age;
+			this.isMajeur = this.age >= ageMajeur;
+		}
 	}
 
 	public String getNom() {
@@ -32,7 +40,9 @@ public class Personne {
 
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+		String str = "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+		str += isMajeur ? " MAJEUR" : " MINEUR";
+		return str;
 	}
 	
 }
