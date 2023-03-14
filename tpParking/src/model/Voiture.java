@@ -1,12 +1,10 @@
 package model;
 
 public class Voiture {
-	private static final int vitesseMax = 300;
-	private static final int vitesseMin = 0;
-	// quand on passe de en-dessous à au-dessus de la vitesse autorisée => flash
-	private static final int vitesseMaxAutorisee = 120;
+	public static final int VITESSE_MAX = 300;
+	public static final int VITESSE_MIN = 0;
+	public static final int LIMITE_VITESSE = 120;
 	
-	// vitesse entre 0 et 300;
 	private int vitesse;
 	private Fiche fiche;
 	private Proprio proprio;
@@ -19,10 +17,30 @@ public class Voiture {
 		this.proprio = proprio;
 	}
 
+	public void setVitesse(int vitesse) {
+		if (vitesse < VITESSE_MIN) {
+			this.vitesse = VITESSE_MIN;
+		} else if (vitesse > VITESSE_MAX) {
+			this.checkFlash(vitesse);
+			this.vitesse = VITESSE_MAX;
+		} else {
+			this.checkFlash(vitesse);
+			this.vitesse = vitesse;
+		}
+	}
+	
+	private void checkFlash(int vitesse) {
+		if (this.vitesse <= LIMITE_VITESSE && vitesse > LIMITE_VITESSE)
+			this.flashCounter++;
+	}
+	
+	public Fiche getFiche() {
+		return fiche;
+	}
+
 	@Override
 	public String toString() {
-		return "Voiture [vitesse=" + vitesse + ", fiche=" + fiche + ", proprio=" + proprio + ", flashCounter="
-				+ flashCounter + "]";
+		return "Voiture [vitesse=" + vitesse + ", flashes=" + flashCounter + ", fiche=" + fiche + ", proprio=" + proprio  + "]";
 	}
 	
 }

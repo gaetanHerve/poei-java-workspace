@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Arrays;
-
 public class Parking {
 	private String nom;
 	private int taille;
@@ -14,21 +12,57 @@ public class Parking {
 	}
 	
 	public boolean garerVoiture(Voiture voiture) {
-
-		return false;
+		boolean voitureGaree = false;
+		
+		for (int i = 0; i < taille; i++) {
+			if (voitures[i] == null) {
+				voitures[i] = voiture;
+				voiture.setVitesse(0);
+				voitureGaree = true;
+				break;
+			}
+		}
+		return voitureGaree;
 	}
 	
-	public boolean quitter(int Matricule) {
-		// si voiture > quitter / retourner false
-		return false;
+	public boolean quitter(String matricule) {
+		boolean placeLiberee = false;
+		for (int i = 0; i < taille; i++) {
+			if (this.voitures[i] != null) {
+				Fiche fiche = voitures[i].getFiche();
+				if (fiche != null && fiche.getMatricule().equals(matricule)) {
+					voitures[i] = null;
+					placeLiberee = true;
+					break;
+				}
+			}
+		}
+		return placeLiberee;
 	}
 	
 	public int getCountByMarque(String marque) {
-		return 0;
+		int count = 0;
+		for (Voiture v : voitures) {
+			if (v != null) {
+				Fiche fiche = v.getFiche();
+				if (fiche != null && fiche.getMarque().equalsIgnoreCase(marque))
+					count++;
+			}
+		}
+		return count;
 	}
 	
 	public int getCountByPrix(int prixMin, int prixMax) {
-		return 0;
+		int count = 0;
+		for (Voiture v : voitures) {
+			Fiche fiche = v.getFiche();
+			if (fiche != null) {
+				int prix = fiche.getPrix();
+				if (prix >= prixMin && prix <= prixMax)
+					count++;
+			}
+		}
+		return count;
 	}
 	
 	public int getCountVoitures() {
@@ -41,9 +75,15 @@ public class Parking {
 
 	@Override
 	public String toString() {
-		return "Parking [nom=" + nom + ", taille=" + taille + ", voitures=" + Arrays.toString(voitures) + "]";
+		String str = "PARKING " + nom;
+		str += "\nVoitures garées:";
+		if (getCountVoitures() == 0) {
+			str += " aucune";
+		} else {
+			for (Voiture v : voitures)
+				if (v != null) str += "\n" + v;
+		}
+		return str;
 	}
 	
-	
-
 }
