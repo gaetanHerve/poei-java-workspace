@@ -48,7 +48,11 @@ public class Personne {
 
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", adresse=" + adresse.toString() + "]";
+		String result = "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+		if (adresse != null) {
+			result += "\n" + adresse;
+		}
+		return result;
 	}
 		
 }
