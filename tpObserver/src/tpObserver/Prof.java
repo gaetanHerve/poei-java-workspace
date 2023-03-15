@@ -20,7 +20,7 @@ public class Prof {
 		}
 	}
 	
-	private void notifyEleves() {
+	private void notifAll() {
 		for (Eleve e : eleves) {
 			if (e != null) {
 				e.notif();
@@ -34,7 +34,7 @@ public class Prof {
 
 	public void setNote(int note) {
 		this.note = note;
-		notifyEleves();
+		notifAll();
 	}
 
 	@Override
