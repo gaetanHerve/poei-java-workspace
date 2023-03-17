@@ -2,10 +2,21 @@ package projetHeritagev1;
 
 import javax.management.ObjectInstance;
 
+import model.*;
+
 public class Test {
 
 	public static void main(String[] args) {
-		test3();
+		test6();
+	}
+	
+	static void test6() {
+		X monX = new X();
+		monX.x1();
+		// monX.x2(); private => pas accessible
+		// monX.x3(); protected => pas accessible
+		Y monY = new Y();
+		monY.y1();
 	}
 	
 	static void test3() {
