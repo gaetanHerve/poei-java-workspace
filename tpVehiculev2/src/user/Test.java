@@ -5,12 +5,15 @@ import model.*;
 public class Test {
 
 	public static void main(String[] args) {
-		// testTpVehiculev2();
-		test6();
+		test7();
+	}
+	
+	static void test7() {
+		
 	}
 	
 	static void test6() {
-		Vehicule vehicule = new Vehicule("vehiculeA", 320);
+		Voiture vehicule = new Voiture("vehiculeA", 320);
 		Voiture voiture = new Voiture("voitureB", 230);
 		Velo velo = new Velo("veloC", 300);
 		Bateau bateau = new Bateau("bateauD", 600, Ebateau.grand);
@@ -37,13 +40,13 @@ public class Test {
 		v1.gpsOnOff();
 		Vehicule v2 = v1;
 		Object v3 = v1;
+		System.out.println(v2);
 		System.out.println(v3);
-		
 	}
 	
     static void test2() {
-        Vehicule[] tab = { new Vehicule("aa", 10), new Voiture("bb", 20), new Velo("cc", 30),
-                new Bateau("dd", 40, Ebateau.grand) };
+        Vehicule[] tab = { new Voiture("aa", 10), new Voiture("bb", 20), new Velo("cc", 30),
+    	        new Bateau("dd", 40, Ebateau.grand) };
 
         for (Vehicule v : tab)
             System.out.println(v.avancer());

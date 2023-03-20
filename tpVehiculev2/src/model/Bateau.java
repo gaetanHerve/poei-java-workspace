@@ -11,8 +11,8 @@ public class Bateau extends Vehicule {
 		this.taille = taille;
 	}
 	
+	@Override
 	public String avancer() {
-		
 		return !this.metIceberg ? "Je flotte" : "Je coule";
 	}
 	

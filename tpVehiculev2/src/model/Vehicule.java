@@ -1,6 +1,6 @@
 package model;
 
-public class Vehicule {
+public abstract class Vehicule {
 	private String model;
 	private int prix;
 	
@@ -9,9 +9,7 @@ public class Vehicule {
 		this.prix = prix;
 	}
 
-	public String avancer() {
-		return "Je roule";
-	}
+	public abstract String avancer();
 
 	@Override
 	public String toString() {

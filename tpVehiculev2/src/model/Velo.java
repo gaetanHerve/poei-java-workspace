@@ -6,8 +6,9 @@ public class Velo extends Vehicule {
 		super(model, prix);
 	}
 	
+	@Override
 	public String avancer() {
-		return super.avancer() + " a deux roues";
+		return "Je roule a deux roues";
 	}
 
 	@Override

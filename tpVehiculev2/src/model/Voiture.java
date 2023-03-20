@@ -7,6 +7,11 @@ public class Voiture extends Vehicule {
 		super(model, prix);
 	}
 	
+	@Override
+	public String avancer() {
+		return "Je roule";
+	}
+	
 	public void gpsOnOff() {
 		this.gps = !gps;
 	}
