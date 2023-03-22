@@ -10,6 +10,9 @@ public class Test {
 		A a  = new A();
 		A b  = new B();
 		A c  = new C();
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
 	}
 	
 	static void test8() {
@@ -30,6 +33,7 @@ public class Test {
 		System.out.println(v2);
 		if (v2 instanceof A) {
 			A v3 = (A)v2;
+			System.out.println(v3);
 		}
 		
 	}
