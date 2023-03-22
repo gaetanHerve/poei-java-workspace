@@ -4,6 +4,7 @@ public class Generic<T> {
 	
 	private T[] tab;
 	
+	@SuppressWarnings("unchecked")
 	public Generic(int taille) {
 		this.tab = (T[]) new Object[taille];
 	}

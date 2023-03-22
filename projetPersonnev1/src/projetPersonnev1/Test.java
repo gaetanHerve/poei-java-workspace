@@ -85,8 +85,8 @@ public class Test {
 		
 		p1 = null;
 		p2 = null;
-		System.out.println(p1.getInfo());
-		System.out.println(p2.getInfo());
+		// System.out.println(p1.getInfo());
+		// System.out.println(p2.getInfo());
 	}
 	
 	static void test5() {

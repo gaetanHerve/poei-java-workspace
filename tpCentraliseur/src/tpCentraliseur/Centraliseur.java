@@ -1,5 +1,4 @@
 package tpCentraliseur;
-import tpCentraliseur.Imprimante;
 
 public class Centraliseur {
 	// Singleton

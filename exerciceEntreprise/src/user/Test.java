@@ -14,7 +14,7 @@ public class Test {
 		Entreprise e1 = new Entreprise("Entreprise 1", 10000.0, TailleEntreprise.tpe, Domaine.informatique);
 		Entreprise e2 = new Entreprise("Entreprise 2", 20000.0, TailleEntreprise.pme, Domaine.publique);
 		AutoEntreprise ae1 = new AutoEntreprise("AutoEntreprise", 20000.0, TailleEntreprise.pme, Domaine.publique);
-		Entreprise[] entreprises = {e1, e2};
+		Entreprise[] entreprises = {e1, e2, ae1};
 		affiche(entreprises);
 		
 		e1.commissionne(5000, e2);

@@ -2,25 +2,25 @@ package tpGeneric;
 
 
 public class Personne {
-	private static Object nom = "DUPOND";
-	private Object prenom;
-	private Object age;
+	private String nom;
+	private String prenom;
+	private int age;
 
 	
 	public Personne() {}
 	
-	public Personne(Object prenom) {
+	public Personne(String prenom) {
 		this.prenom = prenom;
 	}
 	
-	public Personne(Object nom, Object prenom, Object age) {
+	public Personne(String nom, String prenom, int age) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
 	}
 
-	public static void setNom(Object nom) {
-		Personne.nom = nom;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	@Override
