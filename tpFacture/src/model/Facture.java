@@ -3,24 +3,15 @@ package model;
 import java.util.ArrayList;
 
 public class Facture {
-	private ArrayList<Ligne> lignes;
+	private ArrayList<Ligne> lignes = new ArrayList<Ligne>();
 	private String nomClient;
 	
 	public Facture(String nomClient) {
 		this.nomClient = nomClient;
 	}
 	
-	public Facture(ArrayList<Ligne> lignes, String nomClient) {
-		this.lignes = lignes;
-		this.nomClient = nomClient;
-	}
-
-	public ArrayList<Ligne> getLignes() {
-		return lignes;
-	}
-
-	public void setLignes(ArrayList<Ligne> lignes) {
-		this.lignes = lignes;
+	public void add(Ligne ligne) {
+		this.lignes.add(ligne);
 	}
 
 	public double prixTotal() {

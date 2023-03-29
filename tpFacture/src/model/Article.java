@@ -1,8 +1,8 @@
 package model;
 
 public abstract class Article {
-	protected String nom;
-	protected double prix;
+	private String nom;
+	private double prix;
 	
 	public Article(String nom, double prix) {
 		this.nom = nom;

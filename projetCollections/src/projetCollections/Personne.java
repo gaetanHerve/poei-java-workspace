@@ -1,11 +1,15 @@
 package projetCollections;
 
+import java.util.Objects;
 
 public class Personne {
 	private String nom;
 	private String prenom;
 	private int age;
 
+	public Personne(String nom) {
+		this.nom = nom;
+	}
 	
 	public Personne(String nom, String prenom, int age) {
 		this.nom = nom;
@@ -31,6 +35,23 @@ public class Personne {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nom);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Personne other = (Personne) obj;
+		return Objects.equals(nom, other.nom);
 	}
 
 	@Override
