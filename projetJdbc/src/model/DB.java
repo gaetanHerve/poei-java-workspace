@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.sql.PreparedStatement;
+
 public class DB {
 	
 	static private String login = new Credentials().getLogin();
@@ -74,11 +76,24 @@ public class DB {
 		return result;
 	}
 	
+	public void insertv2(int id, String nom, String prenom, int age) throws ClassNotFoundException, SQLException {
+		String sql = "insert into personnes values (?, ?, ?, ?);";
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db-obs1", login, password);
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ps.setString(2, nom);
+		ps.setString(3, prenom);
+		ps.setInt(4, age);
+		ps.executeUpdate();
+		conn.close();
+	}
+	
 	public void insert(int id, String nom, String prenom, int age) throws ClassNotFoundException, SQLException {
 		String sql = "insert into personnes values (" + id + ", '" + nom + "', '" + prenom + "', " + age +");";
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db-obs1", login, password);
-		System.out.println("CONNEXION OK");
 		
 		Statement st = conn.createStatement();
 		st.executeUpdate(sql);

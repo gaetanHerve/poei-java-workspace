@@ -11,7 +11,8 @@ public class Test {
 		// testUpdate(17, "Toto", "Titi", 12);
 		// testSelect();
 		// testSelectById(3);
-		testSelectByNomLike();
+		// testSelectByNomLike();
+		testInsertv2(117, "Toutou", "Tonton", 12);
 	}
 	
 	static void testSelectByNomLike() throws ClassNotFoundException, SQLException {
@@ -29,6 +30,10 @@ public class Test {
 		System.out.println(new DB().select());
 	}
 	
+	static void testInsertv2(int id, String nom, String prenom, int age) throws ClassNotFoundException, SQLException {
+		new DB().insertv2(id, nom, prenom, age);
+	}
+	
 	static void testInsert(int id, String nom, String prenom, int age) throws ClassNotFoundException, SQLException {
 		new DB().insert(id, nom, prenom, age);
 	}
@@ -42,7 +47,7 @@ public class Test {
 	}
 	
 	static void testConnexion() throws ClassNotFoundException, SQLException {
-		new DB().testConnexion();;
+		new DB().testConnexion();
 	}
 
 }
