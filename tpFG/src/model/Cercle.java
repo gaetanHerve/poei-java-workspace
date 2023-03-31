@@ -9,19 +9,17 @@ public class Cercle extends FG {
 
 	@Override
 	public double calculAire() {
-		// TODO Auto-generated method stub
-		return 0;
+		return Math.PI * rayon*rayon;
 	}
 
 	@Override
 	public double calculPerim() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 2 * Math.PI * rayon;
 	}
 
 	@Override
 	public String toString() {
-		return "Cercle [rayon=" + rayon + "]";
+		return super.toString() + " rayon = " + rayon  + "]";
 	}
 
 }

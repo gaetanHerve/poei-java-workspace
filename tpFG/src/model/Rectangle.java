@@ -18,5 +18,12 @@ public class Rectangle extends FG {
 	public double calculPerim() {
 		return (longueur*2 + largeur*2);
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " longueur = " + longueur + ", largeur = " + largeur + "]";
+	}
+	
+	
 	
 }
