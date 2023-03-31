@@ -1,0 +1,29 @@
+#cv-header, #cv-content {
+    height: 140px;
+    margin: 15px; margin-right:50%; border: 1px solid black;
+}
+
+#etudes {
+    display: inline-block; margin: 15px; margin-top: 50px
+}
+
+#identite {
+    display: inline-block; margin: 15px;
+}
+
+input[type=radio] {
+    margin-bottom: 10px;
+}
+
+#photo, #experience {
+    float: inline-end; margin: 10px;
+}
+
+.header-input, select, .loisir-ckbx {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.iframe-elmt {
+    border: none;
+}
