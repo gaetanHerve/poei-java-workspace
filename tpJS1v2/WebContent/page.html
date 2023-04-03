@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ma page</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <label for="nom">
+        Nom : 
+        <input type="text" id="nom" name="nom">
+    </label>
+    <label for="prenom">
+        Prénom :
+        <input type="text" id="prenom" name="prenom">
+    </label>
+    <label for="age">
+        Age : 
+        <input type="number" id="age" name="age">
+    </label>
+
+    <button type="button" onclick="sendResults()">Send results</button>
+
+    <p id="resultId"></p>
+    <p id="resultAge"></p>
+    <p id="status"></p>
+</body>
+</html>
