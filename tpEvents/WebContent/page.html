@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ma page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <label for="nom">
+        Nom : 
+        <input type="text" id="nom" name="nom" onkeyup="onInputChange('nom')" onblur="checkInput('nom')">
+    </label>
+    <p class="error" id="nomError" hidden>Attention, le nom est obligatoire</p>
+    <label for="prenom">
+        Prénom :
+        <input type="text" id="prenom" name="prenom" onkeyup="onInputChange('prenom')" onblur="checkInput('prenom')">
+    </label>
+    <p class="error" id="prenomError" hidden>Attention, le prénom est obligatoire</p>
+    <label for="age">
+        Age : 
+        <input type="number" id="age" name="age" min="0" max="120" onChange="onInputChange('age')">
+    </label>
+
+    <button type="button" id="validate" onclick="sendResults()" disabled>Send results</button>
+
+    <p id="resultId"></p>
+    <p id="resultAge"></p>
+    <p id="status"></p>
+</body>
+</html>

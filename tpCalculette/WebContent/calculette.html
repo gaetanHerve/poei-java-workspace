@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculette</title>
+</head>
+<script src="script.js"></script>
+<body>
+
+    <h1>Calculatrice</h1>
+    <br><hr>
+    
+    <div style="display: block;">
+        Nombre 1 : <input type="number" id="nb1">
+    </div>
+
+    <div style="display: block;">
+        Nombre 2 : <input type="number" id="nb2">
+    </div>
+    <br>
+
+    <button type="button" id="plus" onclick="getResult('plus')">+</button>
+    <button type="button" id="minus" onclick="getResult('minus')">-</button>
+    <button type="button" id="mult" onclick="getResult('mult')">*</button>
+    <button type="button" id="div" onclick="getResult('div')">/</button>
+
+    <hr>
+    <p id="result">Résultat : </p>
+    
+</body>
+</html>

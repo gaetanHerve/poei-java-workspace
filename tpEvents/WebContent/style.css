@@ -1,0 +1,11 @@
+input, label {
+    display: block;
+}
+
+input {
+    margin-bottom: 2%;
+}
+
+.error {
+    color: red;
+}

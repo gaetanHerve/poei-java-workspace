@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tpTableau</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id=""form>
+        <label for="name">NOM :</label>
+        <input type="text" id="name" name="name">
+        <label for="firstname"> PRENOM : </label>
+        <input type="text" id="firstname" name="firstname">
+    </div>
+    <div id="error" hidden>Merci de saisir des valeurs à ajouter</div>
+
+    <div id="btns">
+        <button type="button" onclick="add()">Add</button>
+        <button type="button" onclick="print()">Print</button>
+    </div>
+    
+
+    
+
+    <div id="display">
+        <ul id="list">
+
+        </ul>
+    </div>
+    
+</body>
+</html>

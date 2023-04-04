@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tpRandom</title>
+    <script src="script.js"></script>
+</head>
+<body onload="generateRandomNumber()">
+
+    <h1>Niveau 3 : Avec un peu d'aide</h1>
+    <p id="rule">L'ordinateur a choisi un nombre entre 1 et 10. Essayez de le retrouver le plus rapidement.</p>
+
+    <div id="form">
+        <div id="params" style="margin-bottom: 2%;">
+            <h4>Paramètres</h4>
+            <label for="min">Min : 
+                <input type="number" id="min" name="min" value="1">
+            </label>
+            <label for="max"> Max : 
+                <input type="number" id="max" name="max" value="10">
+            </label>
+            <label for="nbTries"> nombre d'essais : 
+                <input type="number" id="nbTries" name="nbTries" value="4" min="0">
+            </label>
+            <button type="button" id="apply" onclick="setParams()">Appliquer</button>
+        </div>
+
+        <div id="error" style="color: red"></div>
+
+            <hr>
+        <div style="margin-top: 2%;">
+            <label for="guessInput"> Saisir le nombre :
+                <input type="number" id="guessInput" name="guessInput" value="0">
+            </label>           
+            <button type="button" id="validate" onclick="checkAnswer()">Valider</button>
+        </div>
+    </div>
+    
+    <div id="result">
+        <p id="displayResult"></p>
+    </div>
+
+    <button type="button" onclick="generateRandomNumber()">Nouveau nombre</button>
+    
+</body>
+</html>
