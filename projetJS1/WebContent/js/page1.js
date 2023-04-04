@@ -17,4 +17,12 @@ function testArrays() {
 function testArrFunction(value) {
     console.log(value + 1);
 }
-    
+
+function testObjects() {
+    const person = {
+        name: "nom",
+        firstName: "prénom",
+        fullName: function() {return this.firstName + " " + this.name}
+    }
+    console.log(person.fullName());
+}   

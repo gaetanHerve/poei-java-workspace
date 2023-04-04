@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ma page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div id="inputInfos">
+        <label for="nom">
+            Nom : 
+            <input type="text" id="nom" name="nom">
+        </label>
+        <label for="prenom">
+            Prénom :
+            <input type="text" id="prenom" name="prenom">
+        </label>
+        <label for="age">
+            Age : 
+            <input type="number" id="age" name="age" min="0" max="120" value="18">
+        </label>
+        <button type="button" id="validate" onclick="sendResults()">Display person</button>
+        <button type="button" id="validate" onclick="clearInfos()">Clear</button>
+    </div>
+    <hr>
+    <div id="display"></div>
+    
+</body>
+</html>
