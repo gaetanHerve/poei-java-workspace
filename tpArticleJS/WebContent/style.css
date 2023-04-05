@@ -1,0 +1,11 @@
+input, label {
+    display: block;
+}
+
+input {
+    margin-bottom: 2%;
+}
+
+table, th, td, tr {
+    border: solid black 1px;
+}

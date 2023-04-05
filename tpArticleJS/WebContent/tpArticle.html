@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tpArticle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="form">
+        <label for="ref">Ref : <input type="text" id="ref" name="ref"></label>
+        <label for="marque">Marque : <input type="text" id="marque" name="marque"></label>
+        <label for="prix">Prix : <input type="text" id="prix" name="prix"></label>
+    </div>
+
+    <div id="buttons">
+        <button type="button" onclick="addArticle()">Ajouter</button>
+        <button type="button" onclick="displayArticles()">Afficher</button>
+        <button type="button" onclick="clearArticles()">Effacer tout</button>
+    </div>
+
+    <hr>
+    
+    <div id="articlesDisplay">
+        <table id="articles">
+            <thead>
+                <th>Ref</th>
+                <th>Marque</th>
+                <th>Prix</th>
+            </thead>
+            <tbody id="articlesTableBody">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
