@@ -1,0 +1,12 @@
+#range{
+	width : 60px !important;
+	display : initial !important;
+}
+
+.card-img-top{
+	height: 230px;
+}
+
+img{
+	object-fit: cover;
+}
