@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    margin: 5%;
+}
+
+.card {
+    padding: 0px;
+    float: left;
+    height: 300px;
+}
+
+.card:hover,
+img:hover {
+    width: 350px;
+    height: auto;
+    overflow: auto;
+}
+
+img {
+    padding: 0px;
+    width: 300px;
+    height: auto
+}
+
+/* show bs grid */
+/* .row, .col {
+    align-content: center;
+    border: solid black 1px;
+} */
