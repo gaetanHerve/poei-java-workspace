@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
 %>
 
 <div class="container">
-  <h2>Articles BS</h2>
+  <h2>Articles Jstl</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -38,15 +39,15 @@
       </tr>
     </thead>
     <tbody>
-    <% for (Article a : articles) { %>
+    <c:forEach var="a" items="${requestScope.articles}">
       <tr>
-        <td><%= a.getRef() %></td>
-        <td><%= a.getMarque() %></td>
-        <td><%= a.getPrix() %></td>
-        <td><%= a.getCouleur() %></td>
-        <td><%= a.isCher() ? "Oui" : "Non" %></td>
+    	<td><c:out value="${a.ref}" /></td>
+        <td><c:out value="${a.marque}" /></td>
+        <td><c:out value="${a.prix}" /></td>
+        <td><c:out value="${a.couleur}" /></td>        
+        <td><c:out value="${a.isCher() ? 'Oui' : 'Non' }" /></td>
       </tr>
-     <% } %>
+     </c:forEach>
     </tbody>
   </table>
 </div>

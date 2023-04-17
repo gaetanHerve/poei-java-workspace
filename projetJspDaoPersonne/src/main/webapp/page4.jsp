@@ -1,12 +1,13 @@
-<%@page import="model.Article"%>
+<%@page import="model.Personne"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tableau BS</title>
+<title>Allo la Terre, ici page4</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,37 +17,33 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-
 </head>
 <body>
 
-
 <% 
-	ArrayList<Article> articles = (ArrayList<Article>)request.getAttribute("articles"); 
+	ArrayList<Personne> personnes = (ArrayList<Personne>)request.getAttribute("personnes");
 %>
-
+    
 <div class="container">
-  <h2>Articles BS</h2>
+  <h2>Personnes BS</h2>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Ref</th>
-        <th>Marque</th>
-        <th>Prix</th>
-        <th>Couleur</th>
-        <th>Cher ?</th>
+      	<th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Age</th>
       </tr>
     </thead>
     <tbody>
-    <% for (Article a : articles) { %>
+    <c:forEach var="p" items="${requestScope.personnes}">
       <tr>
-        <td><%= a.getRef() %></td>
-        <td><%= a.getMarque() %></td>
-        <td><%= a.getPrix() %></td>
-        <td><%= a.getCouleur() %></td>
-        <td><%= a.isCher() ? "Oui" : "Non" %></td>
+      	<td><c:out value="${p.id}" /></td>
+        <td><c:out value="${p.nom}" /></td>
+        <td><c:out value="${p.prenom}" /></td>
+        <td><c:out value="${p.age}" /></td>       
       </tr>
-     <% } %>
+     </c:forEach>
     </tbody>
   </table>
 </div>
