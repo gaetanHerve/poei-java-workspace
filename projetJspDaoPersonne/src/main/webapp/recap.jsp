@@ -21,7 +21,7 @@
 <body>
     
 <div class="container">
-  <h2>Personnes BS</h2>
+  <h2>Récap Personne</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -32,14 +32,12 @@
       </tr>
     </thead>
     <tbody>
-    <c:forEach var="p" items="${requestScope.personnes}">
       <tr>
-      	<td><c:out value="${p.id}" /></td>
-        <td><c:out value="${p.nom}" /></td>
-        <td><c:out value="${p.prenom}" /></td>
-        <td><c:out value="${p.age}" /></td>       
+      	<td><c:out value="${personne.id}" /></td>
+        <td><c:out value="${personne.nom}" /></td>
+        <td><c:out value="${personne.prenom}" /></td>
+        <td><c:out value="${personne.age}" /></td>       
       </tr>
-     </c:forEach>
     </tbody>
   </table>
 </div>

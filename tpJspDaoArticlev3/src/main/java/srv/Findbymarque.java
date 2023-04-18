@@ -10,20 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DaoPersonne;
-import model.Personne;
+import model.Article;
+import model.DaoArticle;
+
 
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class Findbymarque
  */
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/Findbymarque")
+public class Findbymarque extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public Findbymarque() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +33,20 @@ public class Servlet1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("insert.jsp").forward(request, response);
+		String marque =  request.getParameter("marque");
+		
+		DaoArticle articleDao = new DaoArticle();
+		ArrayList<Article> articles = new ArrayList<Article>();
+		try {
+			articles = articleDao.selectByMarqueLike(marque);
+			request.setAttribute("articles", articles);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		request.getRequestDispatcher("WEB-INF/recap.jsp").forward(request, response);
 	}
 
 	/**

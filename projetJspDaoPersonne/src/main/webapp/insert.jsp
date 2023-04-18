@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Allo la Terre, ici page4</title>
+<title>Insérer une personne</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,27 +21,13 @@
 <body>
     
 <div class="container">
-  <h2>Personnes BS</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-      	<th>Id</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Age</th>
-      </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="p" items="${requestScope.personnes}">
-      <tr>
-      	<td><c:out value="${p.id}" /></td>
-        <td><c:out value="${p.nom}" /></td>
-        <td><c:out value="${p.prenom}" /></td>
-        <td><c:out value="${p.age}" /></td>       
-      </tr>
-     </c:forEach>
-    </tbody>
-  </table>
+  <form action="Servlet2" method="post">
+		ID: <input type="text" name="id"><br>
+	  	NOM: <input type="text" name="nom"><br>
+	 	PRENOM: <input type="text" name="prenom"><br><br>
+	  	AGE: <input type="number" name="age"><br><br>
+	  <input type="submit" value="Submit">
+	</form>
 </div>
 
 </body>

@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DaoPersonne;
-import model.Personne;
+import model.Article;
+import model.DaoArticle;
+
 
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class Servlet
  */
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/ArticlesToString")
+public class ArticleToString extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public Servlet1() {
-        super();
+    public ArticleToString() {
         // TODO Auto-generated constructor stub
     }
 
@@ -32,7 +32,17 @@ public class Servlet1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("insert.jsp").forward(request, response);
+		
+		DaoArticle articleDao = new DaoArticle();
+		try {
+			ArrayList<Article> articles = articleDao.select();
+			request.setAttribute("articles", articles);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("WEB-INF/page1.jsp").forward(request, response);
 	}
 
 	/**

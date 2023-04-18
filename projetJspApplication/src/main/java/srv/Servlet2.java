@@ -1,29 +1,28 @@
 package srv;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.DaoPersonne;
 import model.Personne;
 
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class Servlet2
  */
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/Servlet2")
+public class Servlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public Servlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +31,15 @@ public class Servlet1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("insert.jsp").forward(request, response);
+		ServletContext app = request.getServletContext();
+		
+		ArrayList<Personne> personnes = new ArrayList<Personne>();
+		personnes.add(new Personne("aa", "bb", 14));
+		personnes.add(new Personne("ss", "dd", 15));
+		personnes.add(new Personne("cc", "gg", 16));
+		
+		app.setAttribute("personnes", personnes);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

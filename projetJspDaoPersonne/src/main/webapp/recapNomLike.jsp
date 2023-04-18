@@ -1,4 +1,4 @@
-<%@page import="model.Article"%>
+<%@page import="model.Personne"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tableau Jstl</title>
+<title>Personnes nom like...</title>
 
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -23,27 +23,25 @@
 
 </head>
 <body>
-
+    
 <div class="container">
-  <h2>Articles Jstl</h2>
+  <h2>Personnes nom like...</h2>
   <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th>Ref</th>
-        <th>Marque</th>
-        <th>Prix</th>
-        <th>Couleur</th>
-        <th>Cher ?</th>
+      	<th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Age</th>
       </tr>
     </thead>
     <tbody>
-    <c:forEach var="a" items="${requestScope.articles}">
+    <c:forEach var="p" items="${requestScope.personnes}">
       <tr>
-    	<td><c:out value="${a.ref}" /></td>
-        <td><c:out value="${a.marque}" /></td>
-        <td><c:out value="${a.prix}" /></td>
-        <td><c:out value="${a.couleur}" /></td>        
-        <td><c:out value="${a.isCher() ? 'Oui' : 'Non' }" /></td>
+      	<td><c:out value="${p.id}" /></td>
+        <td><c:out value="${p.nom}" /></td>
+        <td><c:out value="${p.prenom}" /></td>
+        <td><c:out value="${p.age}" /></td>       
       </tr>
      </c:forEach>
     </tbody>

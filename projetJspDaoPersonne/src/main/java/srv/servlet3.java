@@ -14,16 +14,16 @@ import model.DaoPersonne;
 import model.Personne;
 
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class Insert
  */
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/Servlet3")
+public class servlet3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public servlet3() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,20 @@ public class Servlet1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("insert.jsp").forward(request, response);
+		String nom =  request.getParameter("nom");
+		
+		DaoPersonne x = new DaoPersonne();
+		ArrayList<Personne> personnes = new ArrayList<Personne>();
+		try {
+			personnes = x.selectByNomLike(nom);
+			request.setAttribute("personnes", personnes);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		request.getRequestDispatcher("recapNomLike.jsp").forward(request, response);
 	}
 
 	/**

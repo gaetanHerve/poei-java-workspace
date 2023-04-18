@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tableau Jstl</title>
+<title>Recap</title>
 
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -20,34 +20,35 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>  
-
 </head>
 <body>
-
+    
 <div class="container">
-  <h2>Articles Jstl</h2>
-  <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        <th>Ref</th>
-        <th>Marque</th>
-        <th>Prix</th>
-        <th>Couleur</th>
-        <th>Cher ?</th>
-      </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="a" items="${requestScope.articles}">
-      <tr>
-    	<td><c:out value="${a.ref}" /></td>
-        <td><c:out value="${a.marque}" /></td>
-        <td><c:out value="${a.prix}" /></td>
-        <td><c:out value="${a.couleur}" /></td>        
-        <td><c:out value="${a.isCher() ? 'Oui' : 'Non' }" /></td>
-      </tr>
-     </c:forEach>
-    </tbody>
-  </table>
+  <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 75%;">
+  	<h2 class="card-title">Recap</h2>
+	  <table class="table table-striped">
+	    <thead class="thead-dark">
+	      <tr>
+	      	<th>Ref</th>
+	        <th>Marque</th>
+	        <th>Prix</th>
+	        <th>Couleur</th>
+	        <th>Cher ?</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    <c:forEach var="article" items="${requestScope.articles}">
+	      <tr>
+	      	<td><c:out value="${article.ref}" /></td>
+	        <td><c:out value="${article.marque}" /></td>
+	        <td><c:out value="${article.prix}" /></td>
+	        <td><c:out value="${article.couleur}" /></td>
+	        <td><c:out value="${article.isCher() ? 'Cher' : 'Pas cher'}" /></td>       
+	      </tr>
+	     </c:forEach>
+	    </tbody>
+	  </table>
+  </div>
 </div>
 
 </body>
